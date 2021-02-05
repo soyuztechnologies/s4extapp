@@ -7,18 +7,6 @@ module.exports = async (srv) => {
         SalesOrderItem
     } = require("@sap/cloud-sdk-vdm-sales-order-service");
 
-    function getSingleSalesOrder(key) {
-        return BusinessPartner.requestBuilder()
-            .getByKey(key)
-            .select(
-                BusinessPartner.ACADEMIC_TITLE,
-                BusinessPartner.FIRST_NAME,
-                BusinessPartner.LAST_NAME
-            )
-            .execute({
-                destinationName: "CFN"
-            });
-    }
 
      function getAllSalesOrders() {
         return SalesOrder.requestBuilder()
