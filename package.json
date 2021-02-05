@@ -1,0 +1,30 @@
+{
+  "name": "s4hextapp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@sap/ux-specification": "^1.84.2",
+    "sqlite3": "5.0.0"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "cds": {
+    "requires": {
+      "API_SALES_ORDER_SRV": {
+        "kind": "odata",
+        "model": "srv/external/API_SALES_ORDER_SRV"
+      }
+    }
+  },
+  "sapux": [
+    "app/salesorderapp"
+  ]
+}

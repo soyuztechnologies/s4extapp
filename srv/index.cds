@@ -1,0 +1,43 @@
+
+using from './catalog-service';
+
+annotate CatalogService.SalesOrders with @(
+
+    UI:{
+        Identification:[
+            {Value : SalesOrder,Label : '{i18n>Order}'},
+            {Value : SalesOrderType,Label : '{i18n>ordertype}'},
+            {Value : SalesOrganization,Label : '{i18n>salesorg}'}
+        ],
+        Facets  : [
+            {Label : 'Details', $Type : 'UI.ReferenceFacet', ID: 'SalesOrder', Target: '@UI.Identification'}
+        ],
+        SelectionFields: [SalesOrder, SalesOrderType],
+        LineItem: [
+            {Value : SalesOrder},
+            {Value : SalesOrderType},
+            {Value : SalesOrganization},
+            {Value : SoldToParty},
+            {Value : Material},
+            {Value : NetAmount},
+            {Value : OverallDeliveryStatus}
+        ],
+        HeaderInfo:{
+            TypeName: '{i18n>Order}',
+            TypeNamePlural: '{i18n>Orders}',
+            Title: {Value : SalesOrder},
+            Description : {Value:SalesOrganization}
+        }
+
+    }
+);
+
+annotate CatalogService.Students with {
+    SalesOrder @title:'{i18n>Order}';
+    SalesOrderType @title:'{i18n>ordertype}';
+    SalesOrganization @title:'{i18n>salesorg}';
+    SoldToParty @title:'{i18n>soldto}';
+    Material @title:'{i18n>material}';
+    NetAmount @title:'{i18n>amount}';
+    OverallDeliveryStatus @title:'{i18n>status}';
+}
