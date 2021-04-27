@@ -7,7 +7,9 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^4",
-    "express": "^4"
+    "@sap/cloud-sdk-vdm-sales-order-service": "^1.24.0",
+    "express": "^4",
+    "@sap/hana-client": "^2.6.61"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.84.2",
@@ -21,10 +23,19 @@
       "API_SALES_ORDER_SRV": {
         "kind": "odata",
         "model": "srv/external/API_SALES_ORDER_SRV"
+      },
+      "db": {
+        "kind": "sql"
       }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
   },
   "sapux": [
-    "app/salesorderapp"
+    "app/salesorderapp",
+    "app\\salesapp",
+    "app\\sales",
+    "app\\salesappps"
   ]
 }

@@ -1,12 +1,12 @@
-module.exports = async (srv) => {
+const cds = require('@sap/cds');
 
+module.exports = cds.service.impl(async function(srv){
     const { SalesOrders } = cds.entities
 
     const {
         SalesOrder,
         SalesOrderItem
     } = require("@sap/cloud-sdk-vdm-sales-order-service");
-
 
      function getAllSalesOrders() {
         return SalesOrder.requestBuilder()
@@ -22,11 +22,16 @@ module.exports = async (srv) => {
                     SalesOrder.OVERALL_TOTAL_DELIVERY_STATUS,
                     SalesOrder.TO_ITEM.select(SalesOrderItem.MATERIAL, SalesOrderItem.REQUESTED_QUANTITY_UNIT, SalesOrderItem.NET_AMOUNT)
                 )
-                .execute({
-                    url: "http://117.247.238.172:8021/",
-                    username: "",
-                    password:""
-                });
+                .execute(
+                    {
+                        destinationName: 'CFN'
+                    }
+                    // {
+                    //     url: "http://103.207.171.202:8021/",
+                    //     username: "mob5",
+                    //     password:"welcome@5"
+                    // }
+                );
     }
 
     //const salesService = await cds.connect.to('API_SALES_ORDER');
@@ -51,6 +56,4 @@ module.exports = async (srv) => {
                 return aRecords;
             });
     });
-
-
-}
+});

@@ -3,7 +3,7 @@
  
  using {  API_SALES_ORDER_SRV as external } from '../srv/external/API_SALES_ORDER_SRV.csn';
 
- entity SalesOrders as projection on external.A_SalesOrder {
+ entity  SalesOrders as projection on external.A_SalesOrder {
      key SalesOrder,
      SalesOrganization,
      SalesOrderType,
