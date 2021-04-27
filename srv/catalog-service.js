@@ -23,14 +23,14 @@ module.exports = cds.service.impl(async function(srv){
                     SalesOrder.TO_ITEM.select(SalesOrderItem.MATERIAL, SalesOrderItem.REQUESTED_QUANTITY_UNIT, SalesOrderItem.NET_AMOUNT)
                 )
                 .execute(
-                    {
-                        destinationName: 'CFN'
-                    }
                     // {
-                    //     url: "http://103.207.171.202:8021/",
-                    //     username: "mob5",
-                    //     password:"welcome@5"
+                    //     destinationName: 'CFN'
                     // }
+                    {
+                        url: "http://103.207.171.202:8021/",
+                        username: "mob5",
+                        password:"welcome@5"
+                    }
                 );
     }
 

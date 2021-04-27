@@ -14,7 +14,7 @@ annotate CatalogService.SalesOrders with @(
         ],
         SelectionFields: [SalesOrder, SalesOrderType],
         LineItem: [
-            {Value : SalesOrder},
+            {Label: "OrderId", Value : SalesOrder},
             {Value : SalesOrderType},
             {Value : SalesOrganization},
             {Value : SoldToParty},
