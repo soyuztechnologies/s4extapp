@@ -27,9 +27,9 @@ module.exports = cds.service.impl(async function(srv){
                     //     destinationName: 'CFN'
                     // }
                     {
-                        url: "http://103.207.171.202:8021/",
-                        username: "mob5",
-                        password:"welcome@5"
+                        url: "http://103.209.171.202:8021/",
+                        username: "YOUR_USER",
+                        password:"YOUR_PASSWORD"
                     }
                 );
     }
